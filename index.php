@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script
+     src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+     crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    
+    <script src="frontscr.js"></script>
+    <script src="ajaxfunc.js"></script>
+
+    <title>League Helper</title>
+</head>
+<body>
+
+
+<div id="default" class="container-fluid">
+    <div class="row">
+        <div class="col-6">
+            <h2>Welcome to the League Helper</h2>
+            <p>We will find the perfect champion for you based on your rank and role!</p>
+        </div>
+        <div class="col-6">
+            <button id="dev-btn" class="btn btn-primary" onclick="gotoinsert(); findfordev()">Dev page</button>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-5">
+            <form>
+                <div class="form-group">
+                    <b>Rank: </b><br>
+
+                    <select class="form-control" name="rank" id="rank">
+                        <option value="0">Any</option>
+                        <option value="1">Iron</option>
+                        <option value="2">Bronze</option>
+                        <option value="3">Silver</option>
+                        <option value="4">Gold</option>
+                        <option value="5">Platinum</option>
+                        <option value="6">Diamond</option>
+                        <option value="7">Master</option>
+                        <option value="8">Grandmaster</option>
+                        <option value="9">Challanger</option>
+                    </select>
+                    <br>
+                </div>
+            </form>
+
+            <div class="form-group">
+                <form>
+                    <b>Role: </b><br>
+
+                        <input type="radio" name="role" id="role" value="any" checked="checked"> Any <br>
+                        <input type="radio" name="role" id="role" value="top"> Top <br>
+                        <input type="radio" name="role" id="role" value="jungle"> Jungle <br>
+                        <input type="radio" name="role" id="role" value="mid"> Mid <br>
+                        <input type="radio" name="role" id="role" value="adc"> ADC <br>
+                        <input type="radio" name="role" id="role" value="support"> Support <br>
+                    <br>
+                </form>
+            </div>
+
+            <button class="btn btn-primary" id="search" onclick="find()">Find Champions</button>
+        </div>
+        <div class="col-1">
+
+        </div>
+        <div class="col-5">
+            <div id="popuni"> </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        
+        <div class="col-5">
+            <br><br><br>
+            <div class="form-group">
+                <form>
+                    <b>Search champion by name: </b><br>
+                    <input type="text" id="txt" size="32" onkeyup="findbyname()">
+                </form> 
+            </div>
+        </div>
+        
+        <div class="col-1"> </div>
+
+        <div class="col-5">
+            <br><br><br>
+            <div id="livesearch"></div>
+        </div>
+
+    </div>
+
+</div>
+
+<div id="insertdiv" class="container-fluid" style="display:none">
+    <div class="row">
+        <div class="col-6">
+            <h2>Welcome to the League Helper</h2>
+            <p>Add a champion to our list:</p>
+        </div>
+        <div class="col-6">
+            <button id="dev-btn" class="btn btn-primary" onclick="back()">Back</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-5">
+            
+                <div class="form-group">
+                    <b>Name: </b><br>
+                    <input type="text" id="name" class="form-control"><br>
+                    <b>Rank: </b><br>
+                    <input type="text" id="rank2" class="form-control"><br>
+                    <b>Role: </b><br>
+                    <input type="text" id="role2" class="form-control"><br>
+                    <b>Please insert image url here: </b><br>
+                    <input type="text" id="imgurl" class="form-control"><br>
+                    <button class="btn btn-primary" onclick="insertchamp(); findfordev()">Add champion</button>
+                </div>
+                <br><br>
+                <div>
+                    <b>Delete a champion by name: </b><br>
+                    <input id="deletename" type="text" class="form-control"><br>
+                    <button class="btn btn-primary" onclick="deletebyname(); findfordev()">Delete champion</button>
+                </div>
+                
+            
+        </div>
+        <div class="col-1"></div>
+        <div class="col-5">
+            <div id="dev-table"></div>
+        </div>
+    </div>
+
+   
+        
+    
+    
+    <div id="insertmsg">
+
+    </div>
+</div>
+
+
+</body>
+</html>

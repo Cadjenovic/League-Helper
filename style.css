@@ -1,0 +1,28 @@
+#popuni, #livesearch{
+    height: 350px;
+    overflow: auto;
+}
+
+body{
+    background-image: url('https://lol.gamebuddy.gg/assets/images/summoners-rift-background.jpg');
+    color: white !important; 
+}
+
+.table{
+    color: white !important; 
+    
+}
+
+#insertdiv{
+    display: hidden;
+}
+
+#div-table{
+    height: 100%;
+    overflow: auto;
+}
+
+#dev-btn{
+    float: right;
+    
+}
